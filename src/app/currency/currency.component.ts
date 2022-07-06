@@ -38,12 +38,12 @@ export class CurrencyComponent implements OnInit {
   }
 
   onChangeInput_1(event:any){
-    this.input_amount_1 = parseInt(event.target.value);
+    this.input_amount_1 = parseFloat(event.target.value);
     this.input_amount_2 = this.format(this.input_amount_1 * this.response[this.currency_2] / this.response[this.currency_1]); 
   }
 
   onChangeInput_2(event:any){
-    this.input_amount_2 = parseInt(event.target.value);
+    this.input_amount_2 = parseFloat(event.target.value);
     this.input_amount_1 = this.format(this.input_amount_2 * this.response[this.currency_1] / this.response[this.currency_2]); 
   }
 
@@ -51,13 +51,13 @@ export class CurrencyComponent implements OnInit {
   onChangeSelect_1(event:any)
   {
     this.currency_1 = event.target.value;
-    this.input_amount_2 = this.input_amount_1 * this.response[this.currency_2] / this.response[this.currency_1]; 
+    this.input_amount_2 = this.format(this.input_amount_1 * this.response[this.currency_2] / this.response[this.currency_1]); 
   }
 
   onChangeSelect_2(event:any)
   {
     this.currency_2 = event.target.value;
-    this.input_amount_1 = this.input_amount_2 * this.response[this.currency_1] / this.response[this.currency_2]; 
+    this.input_amount_1 = this.format(this.input_amount_2 * this.response[this.currency_1] / this.response[this.currency_2]); 
   }
 
   ngOnInit(): void {
